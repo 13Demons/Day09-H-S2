@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package name="crm" extends="json-default">
+        <default-class-ref class="com.tian.action.HomeAction"/>
+
+        <action name="home" method="home">
+            <result name="success">/new_Home.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action>
+
+        <action name="getPosts" method="getPostByDeptId">
+            <result name="success" type="json">
+                <param name="root">posts</param>
+                <param name="includeProperties">\[\d\]\.id,\[\d\]\.name</param>
+            </result>
+        </action>
+
+        <!--<action name="set" method="getStaffByDeptIdAndPostID">-->
+            <!--<result name="success">/staff.jsp</result>-->
+        <!--</action>-->
+
+        <action name="staffs" class="com.tian.action.StaffsAction" method="staffs">
+            <result name="success">/staff.jsp</result>
+
+        </action>
+        <action name="staffsJson" class="com.tian.action.StaffsAction" method="staffsJson">
+            <result name="success" type="json">
+                <param name="root">staffs</param>
+                <param name="excludeProperties">
+                    \[\d\]\.dept\.posts,
+                    \[\d\]\.dept\.staffs,
+                    \[\d\]\.post\.staffs,
+                    \[\d\]\.post\.dept</param>
+            </result>
+        </action>
+
+    </package>
+
+
+
+
+
+
+
+
+</struts>
