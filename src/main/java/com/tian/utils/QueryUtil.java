@@ -17,7 +17,7 @@ public class QueryUtil {
     public static <T>List<T> findAll(Class<T> clazz){
 
 //        Session session = HibernateUtil.openSession();
-//        //查询
+        //查询
 //        CriteriaBuilder builder = session.getCriteriaBuilder();
 //        //后面填入的Class类型,代表最终需要查询的结果类型
 //        CriteriaQuery<T> query = builder.createQuery(clazz);
