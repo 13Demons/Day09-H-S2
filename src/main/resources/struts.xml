@@ -22,7 +22,7 @@
         <!--<action name="set" method="getStaffByDeptIdAndPostID">-->
             <!--<result name="success">/staff.jsp</result>-->
         <!--</action>-->
-
+<!--asdasdasdasd-->
         <action name="staffs" class="com.tian.action.StaffsAction" method="staffs">
             <result name="success">/staff.jsp</result>
 
